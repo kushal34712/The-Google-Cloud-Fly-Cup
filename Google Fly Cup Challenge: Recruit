@@ -7,7 +7,7 @@ Task 1: Import Tables:
 # make the dataset
 bq mk drl
 # loop through bucket and copy tables to BQ
-( Run full code at a time )
+( Run full code at a time include for file in too )
 (Ignore the error and wait for some time )
 for file in `gsutil ls gs://spls/gsp394/tables/*.csv`; do TABLE_NAME=`echo $file | cut -d '/' -f6 | cut -d '.' -f1`; bq load --autodetect --source_format=CSV --replace=true drl.$TABLE_NAME $file; done
 
