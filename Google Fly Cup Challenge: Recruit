@@ -7,10 +7,9 @@ Task 1: Import Tables:
 # make the dataset
 bq mk drl
 # loop through bucket and copy tables to BQ
-for file in `gsutil ls gs://spls/gsp394/tables/*.csv`
-do TABLE_NAME=`echo $file | cut -d '/' -f6 | cut -d '.' -f1`
-bq load --autodetect --source_format=CSV --replace=true drl.$TABLE_NAME $file
-done
+( Run full code at a time )
+(Ignore the error and wait for some time )
+`gsutil ls gs://spls/gsp394/tables/*.csv`; do TABLE_NAME=`echo $file | cut -d '/' -f6 | cut -d '.' -f1`; bq load --autodetect --source_format=CSV --replace=true drl.$TABLE_NAME $file; done
 
 Task 2:
 ## Replace RANDOM_CITY with dynamic variable
@@ -155,6 +154,8 @@ SELECT *,
 TIME_DIFF(PARSE_TIME('%H:%M.%S', minimum_time), running_avg, SECOND) as time_diff_from_avg FROM cte2
 
 Task 11:
+
+## REPLACE 'AWKBOTS' WITH DYNAMIC VARIABLE FROM TASK 10 
  
 WITH cte AS
 (SELECT
