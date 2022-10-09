@@ -11,7 +11,7 @@ for file in `gsutil ls gs://spls/gsp394/tables/*.csv`; do TABLE_NAME=`echo $file
 Task 2:
 ## Replace RANDOM_CITY with dynamic variable
  
-SELECT name FROM `drl.events` WHERE city = 'Phoenix'
+SELECT name FROM `drl.events` WHERE city = 'Miami'
 
 Task 3:
 
