@@ -1,0 +1,15 @@
+Just change the NAME given in your lab 
+
+export BUCKET_NAME=
+export PROJECT_ID=
+export BUCKET_LOCATION=
+
+
+task 1 
+
+gsutil mb -l $BUCKET_LOCATION -b on gs://$BUCKET_NAME 
+
+task 3 
+
+gs://spls/gsp396/DRL2.ipynb
+
