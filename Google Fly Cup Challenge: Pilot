@@ -2,7 +2,7 @@ Just change the NAME given in your lab
 
 export BUCKET_NAME=
 export BUCKET_LOCATION=
-
+export PROJECT-ID=
 
 task 1 
 
@@ -10,9 +10,36 @@ gsutil mb -l $BUCKET_LOCATION -b on gs://$BUCKET_NAME
 
 task 2 
 
+bq mk drl
 bq load --source_format=CSV drl.pilot-event-times spls/gsp396/lab2.csv --auto-detect
 
 task 3 
 
 gsutil cp gs://spls/gsp396/DRL2.ipynb 
+
+task 4 
+
+Run all of the cells in the DRL2.ipynb file.
+ 
+When setting the PROJECT variable, replace its value with the unique project id of the qwiklabs project
+
+Task 5
+
+Navigate to Vertex AI > Model Registry
+ 
+Click Import
+ 
+Name the model drl-pilot-ranking
+ 
+Choose the dynamically selected region variable displayed in Task 4 for the region
+ 
+Click Model Settings
+ 
+Choose 2.8 for the Model Framework Version
+ 
+Navigate and select the following path for the Model Artifact Location:
+ 
+ 
+gs://$PROJECT-ID/model
+
 
